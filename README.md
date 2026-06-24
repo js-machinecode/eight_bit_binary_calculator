@@ -11,7 +11,6 @@ A Python-based binary calculator created during my DevPipeline software developm
 - Binary multiplication
 - Binary division
 - Shift-and-add multiplication
-- Shift-and-subtract division
 - Step-by-step terminal visualizers
 - Unit tests using unittest
 
