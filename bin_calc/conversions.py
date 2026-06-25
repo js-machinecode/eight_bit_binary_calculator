@@ -1,4 +1,4 @@
-from bin_calc.type_defs import BinaryNumber
+from bin_calc.type_defs import BinaryNumber, DecimalNumber
 from bin_calc.validation import require_binary_string
 
 """
@@ -27,7 +27,7 @@ def bin_to_dec(binary: BinaryNumber) -> int:
     return total
 
 
-def dec_to_bin(decimal: int, width: int = 8) -> BinaryNumber:
+def dec_to_bin(decimal: DecimalNumber, width: int = 8) -> BinaryNumber:
     if decimal < 0:
         raise ValueError("decimal must be non-negative")
 

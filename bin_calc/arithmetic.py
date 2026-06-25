@@ -2,6 +2,8 @@ from bin_calc.type_defs import (
     BinaryNumber,
     EightBitBinaryNumber,
     DivisionResult,
+    Quotient,
+    Remainder,
 )
 from bin_calc.validation import (
     require_binary_string,
@@ -184,7 +186,10 @@ def div_bin(num1: BinaryNumber, num2: BinaryNumber) -> DivisionResult:
     if divisor == 0:
         raise ZeroDivisionError("cannot divide by zero")
 
+    # Number of complete times the divisor fits
+    # into the dividend.
     quotient = dividend // divisor
+    # Value left over after division.
     remainder = dividend % divisor
 
     return dec_to_bin(quotient, width=1), dec_to_bin(remainder, width=1)

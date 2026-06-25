@@ -263,11 +263,11 @@ def visualize_sub_bin(num1, num2):
 
 
 if __name__ == '__main__':
-    # visualize_add_bin('00010010', '00000001')
+    visualize_add_bin('00010010', '00000001')
     # visualize_add_bin('10000000', '10000000')
     # visualize_add_bin('1'*8, '1'*8)
     # visualize_sub_bin('00000001', '00000001')
     # visualize_sub_bin('1' * 8, '1' * 8)
     # visualize_sub_bin('11111111', '0' * 8)
     # visualize_sub_bin('0' * 8, '1' * 8)
-    visualize_sub_bin('00010001', '00000011')
+    # visualize_sub_bin('00010001', '00000011')
