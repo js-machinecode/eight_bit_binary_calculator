@@ -188,8 +188,8 @@ def div_bin(num1: BinaryNumber, num2: BinaryNumber) -> DivisionResult:
 
     # Number of complete times the divisor fits
     # into the dividend.
-    quotient = dividend // divisor
+    quotient: Quotient = dec_to_bin(dividend // divisor, width=1)
     # Value left over after division.
-    remainder = dividend % divisor
+    remainder: Remainder = dec_to_bin(dividend % divisor, width=1)
 
     return dec_to_bin(quotient, width=1), dec_to_bin(remainder, width=1)

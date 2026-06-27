@@ -2,8 +2,6 @@ from bin_calc.type_defs import (
     BinaryNumber,
     EightBitBinaryNumber,
     DivisionResult,
-    Quotient,
-    Remainder,
 )
 
 def add_bin(
