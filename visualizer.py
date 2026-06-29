@@ -59,26 +59,12 @@ def visualize_add_bin(num1, num2):
 
         # If a carry was generated,
         # display it above the next column.
-        if new_carry:
+        if new_carry and bit > 0:
+            carry_row[bit - 1] = '1'
+        carry_display = ''.join(carry_row)
 
-            # Normal case:
-            # place carry one position left.
-            if bit > 0:
-                carry_row[bit - 1] = '1'
-
-            # Special case:
-            # carry generated from leftmost bit.
-            # Example:
-            #
-            # 10000000
-            # 10000000
-            #
-            # Produces:
-            # 100000000
-            #
-            # Insert extra carry at front.
-            else:
-                carry_row.insert(0, '1')
+            
+            
 
         # Print several blank lines to create
         # a simple animation effect.
@@ -87,8 +73,11 @@ def visualize_add_bin(num1, num2):
         print(f'Step {step}')
 
         # Show carry row.
-        print(f'    {"".join(carry_row)}')
-
+        if new_carry and bit == 0:
+            print(f'   1{carry_display:>8}')
+        else:
+            print(f'    {carry_display:>8}')
+            
         # Show the two binary numbers.
         print(f'    {num1}')
         print(f'+   {num2}')
@@ -263,9 +252,9 @@ def visualize_sub_bin(num1, num2):
 
 
 if __name__ == '__main__':
-    visualize_add_bin('00010010', '00000001')
+    # visualize_add_bin('00010010', '00000001')
     # visualize_add_bin('10000000', '10000000')
-    # visualize_add_bin('1'*8, '1'*8)
+    visualize_add_bin('1'*8, '1'*8)
     # visualize_sub_bin('00000001', '00000001')
     # visualize_sub_bin('1' * 8, '1' * 8)
     # visualize_sub_bin('11111111', '0' * 8)
