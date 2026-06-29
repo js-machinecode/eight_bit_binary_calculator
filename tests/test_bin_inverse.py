@@ -1,5 +1,5 @@
 import unittest
-import bin_inverse
+from bin_inverse.bin_inverse import bin_inverse
 
 class BinInverseTests(unittest.TestCase):
 
@@ -8,6 +8,11 @@ class BinInverseTests(unittest.TestCase):
 #############
 
     def test_bin_inverse_zero(self):
+        original_value = '0' * 8   # 0
+        expected_value = '1' + '0' * 7 # -0
+        inverse_value = bin_inverse(original_value)
+        
+        self.assertEqual(inverse_value, expected_value)
 
     def test_bin_inverse_positive_min_n(self):
 
