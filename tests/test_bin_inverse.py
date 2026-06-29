@@ -10,35 +10,35 @@ class BinInverseTests(unittest.TestCase):
 
         self.assertEqual(inverse_value, expected_value)
 
-    def test_bin_inverse_positive_min_n(self):
+    def test_bin_inverse_min_n(self):
         original_value = '0' * 7 + '1'                          
         expected_value = '1' * 7 + '0'                                
         inverse_value = bin_inverse(original_value)
 
         self.assertEqual(inverse_value, expected_value)
  
-    def test_bin_inverse_positive_small_n(self):
+    def test_bin_inverse_small_n(self):
         original_value = '0' * 5 + '111'                         
         expected_value = '1' * 5 + '000'                         
         inverse_value = bin_inverse(original_value)
 
         self.assertEqual(inverse_value, expected_value)
  
-    def test_bin_inverse_positive_medium_n(self):
+    def test_bin_inverse_medium_n(self):
         original_value = '01001011'                                 
         expected_value = '10110100'                                
         inverse_value = bin_inverse(original_value)
 
         self.assertEqual(inverse_value, expected_value)
   
-    def test_bin_inverse_positive_large_n(self):
+    def test_bin_inverse_large_n(self):
         original_value = '01100111'                                   
         expected_value = '10011000'                                 
         inverse_value = bin_inverse(original_value)
 
         self.assertEqual(inverse_value, expected_value)
   
-    def test_bin_inverse_positive_max_n(self):
+    def test_bin_inverse_max_n(self):
         original_value = '11111111'                                 
         expected_value = '0' * 8                        
         inverse_value = bin_inverse(original_value)
