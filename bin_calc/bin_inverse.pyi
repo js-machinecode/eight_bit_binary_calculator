@@ -1,3 +1,3 @@
-from type_defs import EightBitBinaryNumber
+from bin_calc.type_defs import EightBitBinaryNumber
 
 def bin_inverse(bin_str: EightBitBinaryNumber) -> EightBitBinaryNumber: ...

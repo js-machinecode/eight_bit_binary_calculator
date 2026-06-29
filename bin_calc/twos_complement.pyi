@@ -1,3 +1,3 @@
-from type_defs import EightBitBinaryNumber
+from bin_calc.type_defs import EightBitBinaryNumber
 
 def twos_complement(bin_str: EightBitBinaryNumber) -> EightBitBinaryNumber: ...
