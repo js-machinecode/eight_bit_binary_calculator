@@ -9,3 +9,5 @@ Quotient: TypeAlias = BinaryNumber
 Remainder: TypeAlias = BinaryNumber
 
 DivisionResult: TypeAlias = tuple[Quotient, Remainder]
+
+HexNumber: TypeAlias = str

@@ -8,7 +8,8 @@ from bin_calc.arithmetic import (
 )
 from bin_calc.conversions import (
     bin_to_dec,
-    dec_to_bin
+    dec_to_bin,
+    dec_to_hex
 )
 
 from bin_calc.validation import (
@@ -69,7 +70,18 @@ class ConversionTests(unittest.TestCase):
     def test_dec_to_bin(self):
         self.assertEqual(dec_to_bin(32), "00100000")
 
+    def test_dec_to_hex_zero(self):
+        self.assertEqual(dec_to_hex('0'), '0')
 
+    def test_dec_to_hex_tens(self):
+        self.assertEqual(dec_to_hex("27"), '1B')
+
+    def test_dec_to_hex_hundreds(self):
+        self.assertEqual(dec_to_hex('192'), 'C0')
+
+    def test_dec_to_hex_thousands(self):
+        self.assertEqual(dec_to_hex('7320'), '1C98')
+    
 class ArithmeticTests(unittest.TestCase):
 
     def test_add_bin(self):

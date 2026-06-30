@@ -1,5 +1,13 @@
-from bin_calc.type_defs import BinaryNumber, DecimalNumber
-from bin_calc.validation import require_binary_string
+from bin_calc.type_defs import (
+    BinaryNumber,
+    DecimalNumber,
+    HexNumber,
+)
+
+from bin_calc.validation import (
+    require_binary_string,
+    require_hex_string
+) 
 
 """
 Binary and decimal conversion utilities.
@@ -44,3 +52,22 @@ def dec_to_bin(decimal: DecimalNumber, width: int = 8) -> BinaryNumber:
         decimal //= 2
 
     return result.zfill(width)
+
+
+def dec_to_hex(decimal: DecimalNumber) -> str:
+    '''
+    Input a string that represents a decimal number.
+    Output the input string represented as hexadecimal
+    '''
+    hex_digits = "0123456789ABCDEF"
+
+    if int(decimal) == 0:
+        return "0"
+
+    helper = lambda num, result: (
+        result
+        if num == 0
+        else helper(num // 16, hex_digits[num % 16] + result)
+    )
+
+    return helper(int(decimal), "")
