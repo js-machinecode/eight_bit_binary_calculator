@@ -13,7 +13,11 @@ from bin_calc.conversions import (
 
 from bin_calc.validation import (
     is_binary_string,
-    is_eight_bit_binary
+    is_eight_bit_binary,
+    is_hex_string,
+    require_binary_string,
+    require_eight_bit_binary,
+    require_hex_string
 )
 
 class ValidationTests(unittest.TestCase):
@@ -30,6 +34,32 @@ class ValidationTests(unittest.TestCase):
     def test_invalid_eight_bit_binary(self):
         self.assertFalse(is_eight_bit_binary("101"))
 
+    def test_require_binary_string_accepts_valid_binary(self):
+        require_binary_string('10101010')
+
+    def test_require_binary_string_rejects_invalid_binary(self):
+        with self.assertRaises(ValueError):
+            require_binary_string('10201010')
+
+    def test_require_eight_bit_binary_accepts_valid_binary(self):
+        require_eight_bit_binary('10101010')
+
+    def test_require_eight_bit_binary_rejects_wrong_len(self):
+        with self.assertRaises(ValueError):
+            require_eight_bit_binary('100')
+    
+    def test_require_eight_bit_binary_rejects_invalid_char(self):
+        with self.assertRaises(ValueError):
+            require_eight_bit_binary('1010101Z')
+
+    def test_valid_hex_string(self):
+        self.assertTrue(is_hex_string("3D1F"))
+    
+    def test_invalid_hex_string_empty(self):
+        self.assertFalse(is_hex_string(""))
+
+    def test_invalid_hex_string(self):
+        self.assertFalse(is_hex_string("ZZZZ"))
 
 class ConversionTests(unittest.TestCase):
 
